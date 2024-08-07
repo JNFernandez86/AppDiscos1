@@ -22,7 +22,9 @@ namespace AppDiscos
             {
                 conexion.ConnectionString = "server=.;database=DISCOS_DB; integrated security=true";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "select Id, Titulo,CantidadCanciones, UrlImagenTapa from DISCOS;";
+                cmd.CommandText = "select d.Id, Titulo,CantidadCanciones as 'Cantidad Pistas', UrlImagenTapa, e.Descripcion AS 'Estilo Musical', t.Descripcion AS 'Tipo Edicion' " +
+                    "from DISCOS d, ESTILOS e, TIPOSEDICION t " +
+                    "where d.IdEstilo = e.Id and t.Id= d.IdTipoEdicion;";
                 cmd.Connection = conexion;
 
                 conexion.Open();
@@ -34,8 +36,12 @@ namespace AppDiscos
 
                     disc.Id = (int)lector["Id"];
                     disc.Titulo = (string)lector["Titulo"];
-                    disc.CantidadCanciones = (int)lector["CantidadCanciones"];
+                    disc.CantidadCanciones = (int)lector["Cantidad Pistas"];
                     disc.UrlImagenTapa = (string)lector["UrlImagenTapa"];
+                    disc.Estilo = new Estilo();
+                    disc.Estilo.Descripcion = (string)lector["Estilo Musical"];
+                    disc.TipoEdicion = new TipoEdicion();
+                    disc.TipoEdicion.Descripcion = (string)lector["Tipo Edicion"];
                     lista.Add(disc); 
                 }
 

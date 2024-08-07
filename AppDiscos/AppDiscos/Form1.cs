@@ -29,14 +29,28 @@ namespace AppDiscos
             listaDiscos = dn.listar();
             dgvDiscos.DataSource = listaDiscos;
             dgvDiscos.Columns["UrlImagenTapa"].Visible = false;
-            pbxImagenDiscoUrl.Load(listaDiscos[0].UrlImagenTapa);
-
-        
+                 
 
         }
 
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
         {
+            Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
+           
+            cargarImagen(seleccionado.UrlImagenTapa);
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxImagenDiscoUrl.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbxImagenDiscoUrl.Load("https://static.thenounproject.com/png/261694-200.png");
+            }
 
         }
     }
