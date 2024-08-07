@@ -37,29 +37,33 @@
             // dgvDiscos
             // 
             this.dgvDiscos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDiscos.Location = new System.Drawing.Point(12, 35);
+            this.dgvDiscos.Location = new System.Drawing.Point(8, 23);
+            this.dgvDiscos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDiscos.Name = "dgvDiscos";
             this.dgvDiscos.RowHeadersWidth = 62;
             this.dgvDiscos.RowTemplate.Height = 28;
-            this.dgvDiscos.Size = new System.Drawing.Size(822, 275);
+            this.dgvDiscos.Size = new System.Drawing.Size(548, 179);
             this.dgvDiscos.TabIndex = 0;
             this.dgvDiscos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDiscos_CellContentClick);
+            this.dgvDiscos.SelectionChanged += new System.EventHandler(this.dgvDiscos_SelectionChanged);
             // 
             // pbxImagenDiscoUrl
             // 
-            this.pbxImagenDiscoUrl.Location = new System.Drawing.Point(859, 35);
+            this.pbxImagenDiscoUrl.Location = new System.Drawing.Point(573, 23);
+            this.pbxImagenDiscoUrl.Margin = new System.Windows.Forms.Padding(2);
             this.pbxImagenDiscoUrl.Name = "pbxImagenDiscoUrl";
-            this.pbxImagenDiscoUrl.Size = new System.Drawing.Size(304, 275);
+            this.pbxImagenDiscoUrl.Size = new System.Drawing.Size(203, 179);
             this.pbxImagenDiscoUrl.TabIndex = 1;
             this.pbxImagenDiscoUrl.TabStop = false;
             // 
             // frmDiscos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1214, 443);
+            this.ClientSize = new System.Drawing.Size(809, 288);
             this.Controls.Add(this.pbxImagenDiscoUrl);
             this.Controls.Add(this.dgvDiscos);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDiscos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Discos";

@@ -29,6 +29,15 @@ namespace AppDiscos
             listaDiscos = dn.listar();
             dgvDiscos.DataSource = listaDiscos;
             dgvDiscos.Columns["UrlImagenTapa"].Visible = false;
+            pbxImagenDiscoUrl.Load(listaDiscos[0].UrlImagenTapa);
+
+        
+
+        }
+
+        private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
